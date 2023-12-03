@@ -3,7 +3,12 @@ from mbot import DATABASE_NAME, DATABASE_URI
 
 
 class database:
-          
+              def __init__(self, uri, database_name):
+                  self._client = motor.motor_asyncio.AsyncIOMotorClient(uri)
+                  self.db = self._client[database_name]
+                  self.col = self.db.users
+                  self.grp = self.db.group
+      
 
 
 async def add_set(self,id):
