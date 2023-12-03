@@ -1,4 +1,9 @@
+import motor.motor_asyncio
+from mbot import DATABASE_NAME, DATABASE_URI
 
+
+class database:
+          
 
 
 async def add_set(self,id):
@@ -17,3 +22,6 @@ async def add_set(self,id):
           return users     
     async def set_set(self,id,item_id,item_type):
           await self.sg.update_one({'id': int(id)},{'$set': {item_id: item_type}})
+
+
+db = Database(DATABASE_URI, DATABASE_NAME)
